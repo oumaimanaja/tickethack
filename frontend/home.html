@@ -3,9 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    
+    <title>Tickethack</title>
 </head>
 <body>
-    
+    <header>
+        <nav>
+            <a href="./home.html">Tickethack</a>
+            <a href="./cart.html">Cart</a>
+            <a href="./booking.html">Booking</a>
+        </nav>
+    </header>
+    <main>
+        <div id="sous-titre">
+            <h2>Explore the world effortlessly by train!</h2>
+            <p>Compare, book and enjoy cheap prices for train tickets: your journay starts on Tikethack.</p>
+        </div>
+        <div class="container">
+            <div class="cell">
+                <form>
+                    <label for="departure">Departure</label><br>
+                    <input type="text" id="departure" name="departure"><br>
+                    <label for="arrical">Arrival</label><br>
+                    <input type="text" id="arrival" name="arrival"><br>
+                    <input type="date" id="date" name="date"><br>
+                </form>
+            </div>
+            <div class="cell">
+                <img src="./images/train.png">
+                <p>It's time to book your future trip</p>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
