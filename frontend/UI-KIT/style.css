@@ -80,7 +80,7 @@ body {
   
   .btn:hover{
     cursor: pointer;
-    background-color: #96dd99;
+    background-color: #ced4da;
   }
   .field{
     background-color: rgb(235, 240, 235);
@@ -112,9 +112,9 @@ body {
 
 .btn-book:hover{
     cursor: pointer;
-    background-color: #96dd99;
+    background-color:#ced4da;
   }
-  .btn-delete{
+.btn-delete{
     background-color: #4ac198;
     color: white;
     width: 25px;
@@ -129,7 +129,7 @@ body {
 
 .btn-delete:hover{
     cursor: pointer;
-    background-color: #96dd99;
+    background-color: #ced4da;
   }
 
 
