@@ -23,42 +23,146 @@ main {
 /* Réglage de layout (display) */
 
 .container {
-    display: grid;
-    grid-template-columns: 300px 300px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   
     margin: 50px auto 50px auto;
     width : 800px;
-    height: 300px;
+    height: 400px;
+
+    
 }
 
-.cell {
-    background-color: white;
-    border-radius: 7%;
-    color: black;
-    padding: 30px;
-}
 
 /* Réglage de style par élément */
 
-h1{
+.text{
     font-family: "Quicksand", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    
+}
+.blanc{
+    color:white
+}
+.noir{
+    color :black;
 }
 
-h2{
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+.field{
+    background-color: rgb(235, 240, 235);
+    border: 1px solid #dfdfdf ;
+    border-radius: 4px;
+    width: 270px;
+    height: 35px;
+    border-radius: 4px;
+    text-align: left;
+    color: gray;
+    cursor: pointer;
+    margin: 2px;
+  }
+
+
+.Input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-height: 500px;
+    background-color: white;
+    width: 300px;
+    height: 100%;
+    border-radius: 10px;
+    text-align: center;
+    padding: 3px;
+    padding-bottom: 0px;
+    padding: 20px;
+    }
+  
+  .low{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+  }
+
+  .Output-container{
+    background-color: rgb(235, 240, 235);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items:center;
+    border-radius: 10px;
+    padding: 5px;
+    width: 300px;
+    height: 100%;
+    margin: 5px;
+    padding: 20px;
+    }
+
+  .btn{
+    background-color: #4ac198 ;
+    border-color: #4ac198 ;;
+    color: white;
+    width: 270px;
+    height: 35px;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .btn:hover{
+    cursor: pointer;
+    background-color: #ced4da;
+  }
+  .field{
+    background-color: rgb(235, 240, 235);
+    border: 1px solid #dfdfdf ;
+    border-radius: 4px;
+    width: 270px;
+    height: 35px;
+    border-radius: 4px;
+    text-align: left;
+    color: gray;
+    cursor: pointer;
+    
+  
+  }
+
+.btn-book{
+    background-color: #4ac198;
+    color: white;
+    width: 70px;
+    height: 35px;
+    border-radius: 4px;
+    text-align: center;
+    padding: 3px;
+    padding-bottom: 0px;
+    margin: 0px;
+    cursor: pointer;
+    
 }
 
-p{
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
+.btn-book:hover{
+    cursor: pointer;
+    background-color:#ced4da;
+  }
+.btn-delete{
+    background-color: #4ac198;
+    color: white;
+    width: 25px;
+    height: 35px;
+    border-radius: 4px;
+    text-align: center;
+    padding: 3px;
+    padding-bottom: 0px;
+    margin: 0px;
+    cursor: pointer;
 }
 
-a{
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-}
+.btn-delete:hover{
+    cursor: pointer;
+    background-color: #ced4da;
+  }
