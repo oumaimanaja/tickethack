@@ -17,7 +17,7 @@ router.get('/trips/:departure/:arrival/:date', (req, res) => {
   const { departure, arrival, date } = req.params;
   const startDay = moment(date).format() ;
   const endDay = moment(startDay).add(1, 'days').format();
-
+  console(endDay)
   Trip.find({departure: departure, arrival: arrival, date: {$gte: startDay, $lt: endDay}}).then(data => res.json({trips: data}));
 });
 
