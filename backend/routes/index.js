@@ -4,6 +4,8 @@ var router = express.Router();
 require('../models/connection');
 const Trip = require('../models/trips');
 
+const moment = require('moment');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -13,8 +15,13 @@ router.get('/', function(req, res, next) {
 /* POST/GET - Récupérer les trajets dans la base de donnée "trips" en fonction de Arrival / Departure / Date */
 router.get('/trips/:departure/:arrival/:date', (req, res) => {
   const { departure, arrival, date } = req.params;
-  Trip.find({departure: departure, arrival: arrival, date: date}).then(data => res.json({trips: data}));
+  const startDay = moment(date).format() ;
+  const endDay = moment(startDay).add(1, 'days').format();
+
+  Trip.find({departure: departure, arrival: arrival, date: {$gte: startDay, $lt: endDay}}).then(data => res.json({trips: data}));
 });
+
+
 
 /*router.get('/trips', (req, res) => {
   Trip.find().then(data => {
