@@ -1,0 +1,198 @@
+body {
+    margin: 0;
+    background-color: burlywood
+  }
+  
+  #maintitle {
+    text-align: center;
+    margin: 2vw;
+  }
+  
+  .title {
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
+  #container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
+  
+  .section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card {
+    height: 20vh;
+    width: 45vw;
+    margin: 1vw;
+    padding-top: 1vh;
+  }
+  
+  .small-card {
+    height: 25vh;
+    width: 35vw;
+    margin: 1vw;
+    padding-top: 1vh;
+  }
+  
+  .content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  
+  .color{
+    width: 85px;
+    height: 85px ;
+    margin: 2px;
+    border-radius: 45px;
+  }
+  .darkgrey {background-color : #212529;}
+  .grey {background-color: #ced4da;}
+  .green {background-color:  #4ac198;}
+ 
+  
+  .btn{
+    background-color: #4ac198 ;
+    border-color: #4ac198 ;;
+    color: white;
+    width: 270px;
+    height: 35px;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .btn:hover{
+    cursor: pointer;
+    background-color: #96dd99;
+  }
+  .field{
+    background-color: rgb(235, 240, 235);
+    border: 1px solid #dfdfdf ;
+    border-radius: 4px;
+    width: 270px;
+    height: 35px;
+    border-radius: 4px;
+    text-align: left;
+    color: gray;
+    cursor: pointer;
+    
+  
+  }
+
+.btn-book{
+    background-color: #4ac198;
+    color: white;
+    width: 70px;
+    height: 35px;
+    border-radius: 4px;
+    text-align: center;
+    padding: 3px;
+    padding-bottom: 0px;
+    margin: 0px;
+    cursor: pointer;
+    
+}
+
+.btn-book:hover{
+    cursor: pointer;
+    background-color: #96dd99;
+  }
+  .btn-delete{
+    background-color: #4ac198;
+    color: white;
+    width: 25px;
+    height: 35px;
+    border-radius: 4px;
+    text-align: center;
+    padding: 3px;
+    padding-bottom: 0px;
+    margin: 0px;
+    cursor: pointer;
+}
+
+.btn-delete:hover{
+    cursor: pointer;
+    background-color: #96dd99;
+  }
+
+
+
+image{
+  text-align: center;
+  display: block;
+  justify-content: center;
+}
+.text{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.Output-container{
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+overflow:scroll;
+max-height: 500px;
+background-color:  white;
+width: 300px;
+height: 300px;
+border-radius: 10px;
+text-align: center;
+padding: 3px;
+padding-bottom: 0px;
+margin: 0px;
+padding: 20px;
+}
+
+
+.Input-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 500px;
+  background-color: white;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 3px;
+  padding-bottom: 0px;
+  padding: 20px;
+  }
+
+.low{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+}
+.Output-container-DATA{
+background-color: rgb(235, 240, 235);
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+align-items:center;
+border-radius: 10px;
+padding: 5px;
+width: 300px;
+margin: 5px;
+}
