@@ -41,7 +41,7 @@ function GetTimeFromDate(date) {
   const seconds = date.getSeconds();
   return `${hours % 12}:${minutes < 10 ? '0' : ''}${minutes} ${hours >= 12 ? 'PM' : 'AM'}`
 }
-console.log(GetTimeFromDate(new Date("2024-05-13T18:10:55.985Z")))
+console.log(GetTimeFromDate(moment("2024-05-13T18:10:55.985Z")))
 /*router.get('/trips', (req, res) => {
   Trip.find().then(data => {
     res.json({ trips: data })
