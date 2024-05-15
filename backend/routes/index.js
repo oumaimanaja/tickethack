@@ -38,6 +38,7 @@ router.get("/trips/:departure/:arrival/:date", (req, res) => {
   const startDay = moment(new Date(date)).format();
   const endDay = moment(new Date(startDay)).add(1, "days").format();
 
+<<<<<<< HEAD
   Trip.find({
     departure: departure,
     arrival: arrival,
@@ -51,6 +52,22 @@ router.get("/trips/:departure/:arrival/:date", (req, res) => {
     }
     console.log(data)
     res.json({data});
+=======
+  Trip.find({departure: departure, arrival: arrival, date: {$gte: startDay, $lt: endDay}})
+    .then((data) => {
+      const result = [];
+      for (let i = 0; i < data.length; i++) {
+        const departure = data[i].departure;
+        const arrival = data[i].arrival;
+        const hourMin = moment(data[0].date).format('LT');
+        const price = data[i].price;
+
+        let newTrip = { departure: departure, arrival: arrival, date: hourMin, price: price };
+        result.push(newTrip);
+      }
+      res.json({ Trips: result})
+    })
+>>>>>>> 9fcc2275fc8211e1987a22bb9f26407f6e57247a
   });
 ;
 })
