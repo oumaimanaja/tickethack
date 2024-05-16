@@ -25,3 +25,18 @@ document.querySelector('.search').addEventListener('click',
     }
 );
 
+// CART - Calcul du montant
+const sumTrips = document.querySelectorAll('trips')
+
+// CART - Suppression d'un voyage (à ajouter à l'interieur de fonction affihcer aussi)
+if ('element in cart exist') {
+    const deleteTrip = document.querySelectorAll('.croix')
+
+    for (let i = 0; i < deleteTrip.length; i++) {
+        deleteTrip[i].addEventListener('click', function () {
+            this.parentNode.remove() // suppression du voyage
+            const sumTrips = document.querySelectorAll('trips').length // MaJ du total panier
+        })
+    };
+};
+
