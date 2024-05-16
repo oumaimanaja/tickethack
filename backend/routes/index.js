@@ -30,7 +30,13 @@ router.get("/trips/:departure/:arrival/:date", (req, res) => {
         let newTrip = { departure: departure, arrival: arrival, date: hourMin, price: price };
         result.push(newTrip);
       }
-      res.json({ trips: result})
+      if (result.length!=0){
+        res.json({ result:true , trips: result})
+      }
+      else{
+        res.json({result:false})
+      }
+      
     })
   });
 ;
