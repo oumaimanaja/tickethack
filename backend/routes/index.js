@@ -50,12 +50,21 @@ router.put("/trips/:departure/:arrival/:date", (req, res) => {
   
   Trip.updateMany(
     { departure: departure, arrival: arrival, date: date },
-    { toBook: false }
+    { toBook: true }
   ).then(() => {
       Trip.find({departure: departure, arrival: arrival, date: date}).then(data => {
         console.log(data);
         res.json({data})
       });
+  });
+});
+
+// PAGE CART
+/* GET - Récupérer tous les trajets dont toBook: true */
+router.get("/trips/toBook", (req, res) => {
+  Trip.find({toBook: true}).then(data => {
+    console.log(data);
+    res.json({trips: data})
   });
 });
 

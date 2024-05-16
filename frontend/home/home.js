@@ -38,7 +38,7 @@ if (document.querySelector(".search")) {
             ".Output-container"
           ).innerHTML = `                
               <div  class="img train">
-              <image src="./images/notfound.png"/>
+              <image src="../images/notfound.png"/>
               </div>
               <div  class="text noir">No trip found.</div>`;
         }
@@ -64,35 +64,7 @@ function BoutonCart() {
         method: 'PUT',
       })
 
-      window.location.assign("./cart.html");
+      window.location.assign("../cart/cart.html");
     }
   )};
 }
-
-// CART - Afficher les trips avec un array
-/*
-function generateCart() {
-  const trips = [
-    {
-      departure: 'Paris',
-      arrival: 'Lyon',
-      date: '15h15',
-      price: 125,
-    },
-    {
-      departure: 'Paris',
-      arrival: 'Lyon',
-      date: '15h15',
-      price: 125,
-    },
-  ];
-  for (let i = 0; i < trips.length; i++) {
-    document.querySelector('.cart').innerHTML += `
-    <div class="Output-container-DATA noir">
-      <div>${trips[0].departure} > ${trips[0].arrival}</div>
-      <div>${trips[0].date}</div>
-      <div>${trips[0].price}€</div>
-      <button class="btn-book">Book</button>
-    </div> ` 
-  };
-};*/
