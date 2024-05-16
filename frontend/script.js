@@ -1,42 +1,95 @@
 function capitalMinuscule(string) {
-    const newString = string[0].toUpperCase() + string.substring(1, string.length).toLowerCase();
-    return newString ;
+  const newString =
+    string[0].toUpperCase() + string.substring(1, string.length).toLowerCase();
+  return newString;
 }
 
-document.querySelector('.search').addEventListener('click',
-    function () {
-        const departure = capitalMinuscule(document.querySelector('#departure').value); 
-        const arrival = capitalMinuscule(document.querySelector('#arrival').value);
-        const date = document.querySelector('#date').value;
-        //console.log(`http://localhost:3000/trips/${departure}/${arrival}/${date}`)
+let cart = [];
 
-        fetch(`http://localhost:3000/trips/${departure}/${arrival}/${date}`)
-            .then((res) => res.json({ }))
-            .then((data) => {
-                document.querySelector('.Output-container').innerHTML =
-                    `<div class="Output-container">
-                      <div class="Output-container-DATA noir">
-                        <div>${data.trips[0].departure} > ${data.trips[0].arrival} </div>
-                        <div>${data.trips[0].date}</div>
-                        <div>${data.trips[0].price}$</div>
-                        <button class="btn-book">Book</button>
-                      </div>`
-            })
-    }
-);
+// Bouton search
 
-// CART - Calcul du montant
-const sumTrips = document.querySelectorAll('trips')
+if (document.querySelector(".search")) {
+  document.querySelector(".search").addEventListener("click", function () {
+    const departure = capitalMinuscule(
+      document.querySelector("#departure").value
+    );
+    const arrival = capitalMinuscule(document.querySelector("#arrival").value);
+    const date = document.querySelector("#date").value;
+    //console.log(`http://localhost:3000/trips/${departure}/${arrival}/${date}`)
 
-// CART - Suppression d'un voyage (à ajouter à l'interieur de fonction affihcer aussi)
-if ('element in cart exist') {
-    const deleteTrip = document.querySelectorAll('.croix')
+    fetch(`http://localhost:3000/trips/${departure}/${arrival}/${date}`)
+      .then((res) => res.json({}))
+      .then((data) => {
+        if (data.result) {
+          document.querySelector(".Output-container").innerHTML = ``;
+          for (let i = 0; i < data.trips.length; i++) {
+            document.querySelector(".Output-container").innerHTML += `
+                                <div class="Output-container-DATA noir">
+                                  <div>${data.trips[i].departure} > ${data.trips[i].arrival} </div>
+                                  <div>${data.trips[i].date}</div>
+                                  <div>${data.trips[i].price}€</div>
+                                  <button class="btn-book">Book</button>
+                                 </div> 
+                                `;
+          }
+        } else {
+          document.querySelector(
+            ".Output-container"
+          ).innerHTML = `                
+              <div  class="img train">
+              <image src="./images/notfound.png"/>
+              </div>
+              <div  class="text noir">No trip found.</div>`;
+        }
 
-    for (let i = 0; i < deleteTrip.length; i++) {
-        deleteTrip[i].addEventListener('click', function () {
-            this.parentNode.remove() // suppression du voyage
-            const sumTrips = document.querySelectorAll('trips').length // MaJ du total panier
-        })
-    };
-};
+        BoutonCart();
+      });
+  });
+}
 
+//// Bouton Book
+
+function BoutonCart() {
+  let A = document.querySelectorAll(".btn-book");
+  for (let i = 0; i < A.length; i++) {
+    A[i].addEventListener("click", function () {
+      
+      const trajet = A[i].parentElement.childNodes[1].textContent;
+      const date = A[i].parentElement.childNodes[3].textContent;
+      const price = A[i].parentElement.childNodes[5].textContent;
+      console.log(trajet, date, price);
+      let trip = { departure, date, price };
+      console.log(trip)
+      cart.push(trip);
+      //console.log("this is it",cart[0].trajet);
+      window.location.assign("./cart.html");
+      if (cart.length != 0) {
+        console.log("element de cart : ", cart[0].trajet);
+        
+    document.querySelector(".cart-container").innerHTML = `
+        <div class="Output-container-DATA noir">
+        <div>test </div>
+        <div>test  date</div>
+        <div>$cart test€</div>
+        <button class="btn-book">Book</button>
+       </div> 
+      `;
+
+        /*
+        document.querySelector(".cart-container").innerHTML = `
+        <div class="Output-container-DATA noir">
+        <div>${cart[0].trajet} </div>
+        <div>${cart[0].date}</div>
+        <div>${cart[0].price}€</div>
+        <button class="btn-book">Book</button>
+       </div> 
+      `;
+      */
+      }
+    });
+
+
+  }
+
+  
+}
