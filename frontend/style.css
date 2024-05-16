@@ -171,6 +171,10 @@ img {
     margin: 2px;
   }
 
+.none-visible{
+  display: none;
+}
+
 /*Boutons généraux*/
 
 .btn{
