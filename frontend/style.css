@@ -108,13 +108,15 @@ img {
   background-color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items:center;
   border-radius: 10px;
-  padding: 5px;
   width: 300px;
   height: 100%;
   padding: 20px;
+  overflow-x: scroll;
+  
+
 }
 
 .Output-container-DATA{
@@ -122,10 +124,12 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  align-items:center;
+  align-items: center;
   border-radius: 10px;
   padding: 5px;
+  margin: 2px;
   width: 300px;
+  
 }
 
 .cart{
