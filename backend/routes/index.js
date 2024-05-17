@@ -66,8 +66,6 @@ router.get("/trips/toBook", (req, res) => {
   });
 });
 
-module.exports = router;
-
 // PAGE CART 
 // PUT - Retirer un ticket du panier : mettre ToBook à false dans BdD : 
 router.put("/RemoveFromCart/:departure/:arrival/:date", (req, res) => {
@@ -84,3 +82,40 @@ router.put("/RemoveFromCart/:departure/:arrival/:date", (req, res) => {
       });
   });
 });
+
+// PAGE CART
+// PUT - Mettre un ticket "toBook:true" en booked:true */
+router.put("/booked", (req, res) => {
+  Trip.updateMany(
+    { toBook: true },
+    { booked: true, toBook: false }
+  ).then(() => {
+      Trip.find({booked: true}).then(data => {
+        console.log(data)
+        res.json({MyCart:data})
+      });
+  });
+});
+
+// PAGE BOOKING
+// GET - Tous les trajets "booked: true" et 
+router.get("/trips/booked", (req, res) => {
+  Trip.find({booked: true}).then(data => {
+    res.json({trips: data})
+  });
+});
+
+// Reset page booking
+router.put("/booked/reset", (req, res) => {
+  Trip.updateMany({ booked: true }, { booked: false })
+    .then(() => {
+      Trip.find({ booked: true }).then(data => {
+        console.log(data)
+        res.json({MyCart:data})
+      });
+    })
+});
+
+
+
+module.exports = router;

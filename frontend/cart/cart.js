@@ -22,11 +22,12 @@ fetch("http://localhost:3000/trips/toBook")
       }
       document.querySelector(".cart-container").innerHTML += `
               <div class="total-box">
-              <div class="total"> Total :${total} </div>
-              <button class="btn-book">Purchase</button>
+              <div class="total"> Total :${total} € </div>
+              <button id="purchase" class="btn-book">Purchase</button>
              </div>`;
     }
     Remove();
+    purchase();
 
   
   })
@@ -69,3 +70,17 @@ function UpdateTotal(data){
     </div>`
   }
 }
+
+function purchase() {
+  if(document.querySelector('#purchase')) {
+    document.querySelector('#purchase').addEventListener('click', function () {
+      fetch('http://localhost:3000/booked', {method: "PUT"})
+      .then(()=>{
+        window.location.assign("../booking/booking.html");
+      })
+    })
+  };
+}
+
+
+
