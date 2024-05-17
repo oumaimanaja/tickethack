@@ -12,7 +12,7 @@ fetch("http://localhost:3000/trips/booked")
                 <div>${data.trips[i].departure} > ${data.trips[i].arrival}</div>
                 <div>${moment(data.trips[i].date).format("LT")}</div>
                 <div>${data.trips[i].price} €</div>
-                <div>departure ${moment(data.trips[i].date).endOf('day').fromNow().format()}</div>
+                <div>departure ${moment(data.trips[i].date).endOf('day').fromNow()}</div>
             </div> `;
         }
     document.querySelector(".cart-container").innerHTML +=

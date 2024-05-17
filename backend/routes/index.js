@@ -20,27 +20,14 @@ router.get("/trips/:departure/:arrival/:date", (req, res) => {
 
   Trip.find({departure: departure, arrival: arrival, date: {$gte: startDay, $lt: endDay}})
     .then((data) => {
-      const result = [];
-      for (let i = 0; i < data.length; i++) {
-        const departure = data[i].departure;
-        const arrival = data[i].arrival;
-        const date = data[i].date;
-        const hourMin = moment(data[i].date).format('LT');
-        const price = data[i].price;
-
-        let newTrip = { departure: departure, arrival: arrival, date: date, hour: hourMin, price: price };
-        result.push(newTrip);
-      }
-      if (result.length!=0){
-        res.json({ result:true , trips: result})
+      if (data.length!=0){
+        res.json({ result: true , trips: data})
       }
       else{
-        res.json({result:false})
+        res.json({ result: false })
       }
-      
-    })
-  });
-;
+    });
+  })
 
 // PAGE HOME
 /* PUT - Mettre un ticket en toBook: true dans la BdD */
@@ -115,7 +102,5 @@ router.put("/booked/reset", (req, res) => {
       });
     })
 });
-
-
 
 module.exports = router;
