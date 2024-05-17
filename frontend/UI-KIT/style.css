@@ -1,66 +1,27 @@
 body {
     margin: 0;
-    background-color: burlywood
-  }
-  
-  #maintitle {
-    text-align: center;
-    margin: 2vw;
-  }
-  
-  .title {
-    font-weight: bold;
-    font-size: 24px;
-  }
-  
-  #container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-  }
-  
-  .section {
-    display: flex;
+    background-color: burlywood ;
+    display:list-item ;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
-  
-  .card {
-    height: 20vh;
-    width: 45vw;
-    margin: 1vw;
-    padding-top: 1vh;
-  }
-  
-  .small-card {
-    height: 25vh;
-    width: 35vw;
-    margin: 1vw;
-    padding-top: 1vh;
-  }
-  
-  .content {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-  }
-  
-  .row {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-  }
+ .flex{
+  margin: 20px;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+
+ } 
+
   
   .color{
+    background-color: aqua;
     width: 85px;
     height: 85px ;
     margin: 2px;
     border-radius: 45px;
+
   }
   .darkgrey {background-color : #212529;}
   .grey {background-color: #ced4da;}
@@ -118,7 +79,7 @@ body {
     background-color: #4ac198;
     color: white;
     width: 25px;
-    height: 35px;
+    height: 25px;
     border-radius: 4px;
     text-align: center;
     padding: 3px;
@@ -196,4 +157,47 @@ padding: 5px;
 width: 300px;
 margin: 5px;
 overflow:scroll;
+}
+
+.cart-container{
+  background-color: white;
+  color: black;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: flex-end;
+  border-radius: 10px;
+  width: 800px;
+  margin: 5px;
+  overflow:scroll;
+
+
+}
+.Item-cart{
+background-color: rgb(235, 240, 235);
+color: black;
+padding: 3px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items:center;
+border-radius: 5px;
+padding: 10px;
+margin: 10px;
+width: 90%;
+overflow:scroll;
+}
+.total-box{
+background-color: rgb(8, 8, 75);
+color: white;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items:center;
+padding: 20px;
+border-bottom: 10px;
+width: 95%;
+overflow:scroll;
+
 }

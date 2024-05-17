@@ -74,7 +74,7 @@ img {
     height: 350px;
 }
 
-.cart-container{
+.main-cart{
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -132,12 +132,53 @@ img {
   
 }
 
+
 .cart{
   background-color: white;
   border-radius: 7%;
   padding: 25px;
 }
+.cart-container{
+  background-color: white;
+  color: black;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: flex-end;
+  border-radius: 10px;
+  width: 800px;
+  margin: 5px;
+  overflow:scroll;
 
+}
+.Item-cart{
+  background-color: rgb(235, 240, 235);
+  padding: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:center;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  width: 90%;
+  overflow:scroll;
+  }
+
+.total-box{
+  background-color: rgb(8, 8, 75);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:center;
+  padding: 20px;
+  border-bottom: 10px;
+  width: 95%;
+  overflow:scroll;
+  
+  }
 /* ----- REGLAGE PAR ELEMENT ----- */
 
 /* Couleur du texte */
@@ -170,6 +211,10 @@ img {
     cursor: pointer;
     margin: 2px;
   }
+
+.none-visible{
+  display: none;
+}
 
 /*Boutons généraux*/
 
