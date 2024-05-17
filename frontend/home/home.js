@@ -58,13 +58,15 @@ function BoutonCart() {
       const arrival = this.parentElement.childNodes[3].textContent;;
       const date = this.parentElement.childNodes[9].textContent;
 
-      console.log(`http://localhost:3000/trips/${departure}/${arrival}/${date}`)
+      console.log(`http://localhost:3000/addToCart/${departure}/${arrival}/${date}`)
       
-      fetch(`http://localhost:3000/trips/${departure}/${arrival}/${date}`,{
+      fetch(`http://localhost:3000/addToCart/${departure}/${arrival}/${date}`,{
         method: 'PUT',
+      }).then(()=>{
+        window.location.assign("../cart/cart.html");
       })
 
-      window.location.assign("../cart/cart.html");
+    
     }
   )};
 }
